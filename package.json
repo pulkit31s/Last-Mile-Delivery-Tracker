@@ -1,0 +1,26 @@
+{
+  "name": "last-mile-delivery-tracker",
+  "version": "1.0.0",
+  "description": "Production-Ready Last-Mile Delivery Management & Realtime Tracking Platform",
+  "scripts": {
+    "dev": "concurrently \"npm --prefix backend run dev\" \"npm --prefix frontend run dev\"",
+    "build": "npm --prefix backend run build && npm --prefix frontend run build",
+    "test": "npm --prefix backend run test",
+    "seed": "npm --prefix backend run seed",
+    "install:all": "npm --prefix backend install && npm --prefix frontend install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "logistics",
+    "last-mile",
+    "tracking",
+    "socket.io",
+    "nextjs",
+    "express",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "MIT"
+}
