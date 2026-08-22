@@ -22,8 +22,8 @@ export const authenticate = async (
 
     if (authHeader && authHeader.startsWith('Bearer ')) {
       token = authHeader.split(' ')[1];
-    } else if (req.cookies?.token) {
-      token = req.cookies.token;
+    } else if ((req as any).cookies?.token) {
+      token = (req as any).cookies.token;
     }
 
     if (!token) {

@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { Router, Request, Response } from 'express';
 import mongoose from 'mongoose';
 import authRoutes from './authRoutes';
 import orderRoutes from './orderRoutes';
@@ -9,7 +9,7 @@ import { ApiResponse } from '../utils/apiResponse';
 const router = Router();
 
 // Health check endpoint
-router.get('/health', (_req, res) => {
+router.get('/health', (_req: Request, res: Response) => {
   const isDbConnected = mongoose.connection.readyState === 1;
   return ApiResponse.success(res, {
     status: isDbConnected ? 'healthy' : 'degraded',
